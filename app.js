@@ -65,6 +65,6 @@ app.post("/",function(req,res){
     request.end();
 })
 
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
     console.log("Server started");
 })
