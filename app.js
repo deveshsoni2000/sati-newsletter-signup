@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const { request } = require("express");
 const { json } = require("body-parser");
 const app = express();
-const https = require("node:https");
+const https = require("https");
 
 app.use(express.static("public")); //To send static web page in response we use this
 app.use(bodyParser.urlencoded({extended:true})); //using urlencoded method to parse
@@ -47,7 +47,7 @@ app.post("/",function(req,res){
     //This is options needed 
     const options = {
         method: "POST",
-        auth: "devesh2000site:4c9d4092094173a557a78648e55d04-us8" //username : API key as Password format
+        auth: "devesh2000site:10be82b122917a9fe58a1bef7b96e516-us8" //username : API key as Password format
     }
     //method to post/send our data via https request check docs for more info.
     const request = https.request(url,options, function(response){
@@ -65,12 +65,6 @@ app.post("/",function(req,res){
     request.end();
 })
 
-app.listen(process.env.PORT,function(){
-    console.log("Server started at port 3000");
+app.listen(3000,function(){
+    console.log("Server started");
 })
-
-//API Key
-//ca4c9d4092094173a557a78648e55d04-us8
-
-//Unique ID / Audience ID
-//c1f0f8e6ec
