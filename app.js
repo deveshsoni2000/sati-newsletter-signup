@@ -47,7 +47,7 @@ app.post("/",function(req,res){
     //This is options needed 
     const options = {
         method: "POST",
-        auth: "devesh2000site:10be82b122917a9fe58a1bef7b96e516-us8" //username : API key as Password format
+        auth: "devesh2000site:process.env.MY_API_KEY" //username : API key as Password format
     }
     //method to post/send our data via https request check docs for more info.
     const request = https.request(url,options, function(response){
